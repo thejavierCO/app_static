@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    <style>
+        body{
+            background:#000;
+            color:#fff;
+            margin: 0px;
+            padding: 0px;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+        }
+        a{
+            text-decoration: none;
+            color:#000;
+        }
+        #menu{
+            display: none;
+            grid-row: 2;
+            padding: 10px;
+            grid-row: 2/-1;
+            overflow: auto;
+        }
+        #menu > h1{
+            text-align: center;
+        }
+        #menu > span#version{
+            padding: 10px;
+            text-align: right;
+        }
+        .iconBase{
+            border-radius: 10px;
+            margin-bottom: 5px;
+            height: 7px;
+            width: 50px;
+        }
+        .barColor{
+            background: #000;
+        }
+        .barText{
+            text-align: center;
+            font-size: 10px;
+        }
+        #icon{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-columns: auto auto;
+            justify-items: center;
+            align-items: center;
+            padding: 10px;
+        }
+        #icon > p > img{
+            border-radius:100%;
+        }
+        #icon > p{
+            grid-column: 1/-1;
+            text-align: center;
+        }
+        #icon:hover{
+            cursor: pointer;
+            filter: saturate(80%);
+        }
+        #icon:active{
+            filter: saturate(0%);
+        }
+        #correo{
+            cursor: pointer;
+        }
+        #footer{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+            align-content: center;
+            text-align: center;
+        }
+        #footer > div.info{
+            padding: 5px;
+        }
+        #base{
+            background: rgba(255,255,255,1);
+            color: #000;
+            width: 750px;
+            height:100vh;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+            overflow: auto;
+        }
+        #base > #bar{
+            height: 10vh;
+            grid-column: 1 / -1;
+        }
+        #base > #bar > div#iconMenu{
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            height: 100%;
+            width: 100px;
+        }
+        #base > #bar > div#iconMenu:hover{
+            background: #000;
+        }
+        #base > #bar > div#iconMenu:hover > .barColor{
+            background: #fff;
+        }
+        #base > #bar > div#iconMenu:hover > .barText{
+            color: #fff;
+        }
+        #base > #bar > div#iconMenu:active{
+            background: rgba(0,0,0,0.5);
+        }
+        #base > #bar > div#iconMenu:active > .barColor{
+            background: #fff;
+        }
+        #base > #bar > div#iconMenu:active > .barText{
+            color: #fff;
+        }
+        #base > #content{
+            display: grid;
+            grid-template-rows:1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-content: center;
+            overflow: auto;
+        }
+        @media only screen and (max-width:700px){
+            #base{
+                height: 100vh;
+                width: 100vw;
+            }
+            #base > #bar{
+                height: 15vw;
+            }
+            #base > #bar > div#iconMenu{
+                width: 15vw;
+            }
+            #base > #content{
+                width: 100vw;
+            }
+            #icon{
+                margin:10px;
+            }
+            #icon > img{
+                width: 40vw;
+            }
+            #footer > div{
+                grid-column: 1/-1;
+            }
+            .iconBase{
+                height:1vw;
+                width: 40px;
+            }
+            .barColor{
+                background: #000;
+            }
+            .barText{
+                text-align: center;
+                font-size: 10px;
+            }
+        }
+        @media only screen and (max-width:750px) {
+            #base > #content > div#icon{
+                grid-column:1/-1;
+                height:9vh;
+            }
+            #base > #content > div#icon > p{
+                grid-column: span 1;
+            }
+            #base > #content > div#icon > p > img{
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="base">
+        <div id="bar">
+            <div id="iconMenu">
+                <div class="barColor iconBase"></div>
+                <div class="barColor iconBase"></div>
+                <div class="barColor iconBase"></div>
+                <div class="barText">menu</div>
+            </div>
+        </div>
+        <div id="content">
+            <div id="icon">
+                <p><img src="https://i.ibb.co/hc18sJk/icon1.jpg" alt="SINTOMAS DEL COVID-19"></p>
+                <p>SINTOMAS DEL COVID-19</p>
+            </div>
+            <div id="icon">
+                <p><img src="https://i.ibb.co/xYj2ZNq/icon2.jpg" alt="INFORMACION OFICIAL"></p>
+                <p>INFORMACION OFICIAL</p>
+            </div>
+            <div id="icon">
+                <p><img src="https://i.ibb.co/LrjdVpt/icon3.jpg" alt="COMUNICADOS"></p>
+                <p>COMUNICADOS</p>
+            </div>
+            <div id="icon">
+                <p><img src="https://i.ibb.co/1Mc5y71/icon4.jpg" alt="CENTROS DE ATENCION"></p>
+                <p>CENTROS DE ATENCION</p>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="info">
+                Correo para Atencion al cliente
+                <div id="correo">
+                    <a href="mailto:ATENCIONCOVIDAPP@EXAMPLE.COM">ATENCIONCOVIDAPP@EXAMPLE.COM</a>
+                </div>
+            </div>
+            <div class="info">
+                soporte y actualizacion de la app
+                <div id="correo">
+                    <a href="mailto:COVID@EJEMEPLO.GOB.MX">COVID@EJEMEPLO.GOB.MX</a>
+                </div>
+            </div>
+        </div>
+        <div id="menu">
+            <h1>Info</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci minus assumenda in recusandae cum, nisi accusamus ut veniam accusantium et, fugiat quasi harum obcaecati, aliquid eveniet magni tenetur dolorum ex!
+            Officiis repellat perferendis obcaecati sint odit doloribus quos non neque, itaque qui alias consequatur facere aperiam minima amet quod magnam cumque saepe. Dignissimos, eius! Eos dolores eligendi libero commodi similique.
+            Sapiente doloremque quas sunt. Eveniet soluta iusto voluptatum quia rem, dolorem enim autem maxime laudantium voluptatibus ea neque molestiae nam repudiandae dignissimos nobis dicta officiis asperiores? Exercitationem esse aliquam autem.
+            Alias ex impedit suscipit ratione excepturi ut optio tenetur vitae magni pariatur, corporis delectus! Nihil iste quibusdam, ea totam repellat minus excepturi soluta fuga modi reprehenderit est laboriosam eligendi voluptates.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis esse, soluta, quisquam pariatur dolorum dolorem odit assumenda amet placeat veniam explicabo labore perferendis repudiandae facere modi veritatis hic, blanditiis alias.
+            Velit perspiciatis nemo cum eos animi vero unde perferendis culpa dolorum nisi nobis laboriosam maxime soluta, magni in! Commodi nisi magnam natus facere doloribus, consequuntur dolores quae doloremque provident voluptas!
+            Excepturi tempore ratione sit delectus, doloremque temporibus odio, placeat laudantium, inventore accusantium maxime incidunt id? Deleniti minus libero tempora ad consequatur illo, dicta vero nulla ut at, repellendus, earum aspernatur.
+            Amet eos tempora reprehenderit libero natus atque possimus ipsam non, sint commodi doloribus laborum tenetur facilis ea, inventore facere blanditiis. Quisquam quia, saepe ea vero illum labore quaerat quidem possimus.
+            Provident ullam deleniti iure quae, dolorem asperiores ratione id veritatis fugiat veniam recusandae architecto voluptatum incidunt temporibus repudiandae soluta nam? Voluptate, rerum ut? Consectetur, vel odit debitis repellat perferendis harum!
+            Molestiae corporis nemo, dolorum tenetur saepe esse perspiciatis nisi non quo? Atque laudantium aspernatur, voluptate sed aliquam quos? Ipsam debitis voluptatibus, esse unde pariatur incidunt qui dolor enim laborum officiis?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ut tenetur, nemo saepe fugit dignissimos perspiciatis veniam veritatis voluptas facere ipsum repellendus rerum maxime culpa, nulla iusto commodi, aut qui.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In maiores culpa voluptatem tempore nihil pariatur voluptatibus dolorem perspiciatis architecto tenetur optio, reprehenderit sunt! Illum itaque sunt totam excepturi voluptatibus eos!
+            Sapiente eligendi et iste aliquam, animi amet, delectus ex ipsam ratione quas aperiam cum neque ipsum rerum necessitatibus at similique voluptate, dolorum perspiciatis accusantium aspernatur exercitationem explicabo impedit. Necessitatibus, blanditiis!
+            Optio ab enim distinctio, odio cumque numquam facere voluptates libero est nulla dignissimos quo accusamus? Repudiandae ut inventore optio consequuntur consequatur consectetur, illum hic quia, facilis exercitationem unde pariatur deserunt?
+            Placeat veniam ad iure id consectetur, harum exercitationem reiciendis ducimus laborum nostrum in dignissimos quae labore tempora animi reprehenderit aliquid at tenetur repellat nihil, blanditiis explicabo facilis odio architecto! Dicta.
+            Numquam quasi autem cumque aspernatur, alias totam officia, perferendis voluptates magni minima saepe hic ut ratione exercitationem dolore placeat id fugiat temporibus obcaecati repellendus aut. Accusantium architecto sed nemo. Itaque.
+            Ea blanditiis quibusdam fuga ullam, expedita, id vero ad sit qui, mollitia voluptatum. A praesentium eveniet aperiam aliquid excepturi voluptate illum? Mollitia molestias possimus labore ratione animi rerum, temporibus perferendis.
+            Eligendi voluptates, illo officiis maxime esse deleniti hic id aliquid. Sit sunt excepturi, quo voluptas, ex repellat quia tempore culpa aliquid quae dignissimos voluptatibus aut, laborum repudiandae debitis ipsam. Veritatis.</p>
+            <span id="version"><strong>VERSION 1.0.1</strong></span>
+        </div>
+    </div>
+    <script>
+        let active = false;
+        const base = document.getElementById("iconMenu");
+        const footer = document.getElementById("footer");
+        const content = document.getElementById("content");
+        const menu = document.getElementById("menu");
+        base.addEventListener("click",(a)=>{
+            active = !active;
+            if(active){
+                menu.style.display = "grid";
+                content.style.display = "none";
+                footer.style.display = "none";
+            }else{
+                menu.style.display = "none";
+                content.style.display = "grid";
+                footer.style.display = "grid";
+            }
+        })
+    </script>
+</body>
+</html>
